@@ -3,6 +3,7 @@ A simple calculator project built using ReactJS. In this section I configured th
  - Creating a new branch for the setup
  - Adding Linter files
  - Adding React libraries 
+ - Add Componets (Calculator, Display & Rows to the App)
 
 ## Built With
 
