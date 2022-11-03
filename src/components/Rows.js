@@ -23,7 +23,6 @@ const Rows = (props) => {
 Rows.propTypes = {
   row: PropTypes.arrayOf(PropTypes.string).isRequired,
   setObj: PropTypes.func.isRequired,
-
 };
 
 export default Rows;

@@ -6,8 +6,8 @@ const Display = (props) => {
   return (
     <div id="screen">
       <span>
-        { `${obj.total ?? ''}
-        ${obj.operation ?? ''}
+        { `${obj.total ?? ''} 
+        ${obj.operation ?? ''} 
         ${obj.next ?? ''}` }
       </span>
     </div>
