@@ -24,8 +24,10 @@ To get a local copy up and running follow these simple example steps.
 **Open your git bash or your IDE terminal then use the git command to clone it to your machine**
 ### Install
 **The folder will then be installed in your machine.**
+npm start - To start the App
 ### Usage
 **You can edit codes and make changes, dont forget to give credits to me**
+npm install - To install all dependancies
 ### Run tests
 **Linters are already setup in the repo for error checks**
 
