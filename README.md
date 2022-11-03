@@ -4,6 +4,7 @@ A simple calculator project built using ReactJS. In this section I configured th
  - Adding Linter files
  - Adding React libraries 
  - Add Componets (Calculator, Display & Rows to the App)
+ - Refactored with hooks
 
 ## Built With
 

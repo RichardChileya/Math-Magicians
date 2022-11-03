@@ -1,21 +1,28 @@
 import PropTypes from 'prop-types';
 import React from 'react';
+import calculate from '../logic/calculate';
 
-const Rows = ({ row, buttonClicks }) => {
-  // const handleClicks = (e) => {
-  //   buttonClicks(e.target.innerText);
-  // }
+const Rows = (props) => {
+  const { row, setObj } = props;
   const buttons = [];
   for (let i = 0; i < row.length; i += 1) {
-    buttons.push(<button type="button" key={row[i]} value={row[i]} onClick={buttonClicks}>{row[i]}</button>);
+    buttons.push(
+      <button
+        type="button"
+        key={i}
+        onClick={(e) => setObj((obj) => calculate(obj, e.target.innerText))}
+      >
+        { row[i] }
+      </button>,
+    );
   }
+
   return buttons;
 };
 
 Rows.propTypes = {
   row: PropTypes.arrayOf(PropTypes.string).isRequired,
-  buttonClicks: PropTypes.func.isRequired,
-
+  setObj: PropTypes.func.isRequired,
 };
 
 export default Rows;
