@@ -1,63 +1,38 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Rows from './Rows';
 import Display from './Display';
-import calculate from '../logic/calculate';
+import '../css/calculator.css';
 
-class Calc extends React.Component {
-  constructor() {
-    super();
-    this.buttonClicks = this.buttonClicks.bind(this);
-    this.state = {
-      obj: {
-        total: null,
-        next: null,
-        operation: null,
-      },
-    };
-  }
+const Calc = () => {
+  const [obj, setObj] = useState({ total: null, operation: null, next: null });
 
-  componentDidMount() {
-    this.setState({
-      obj: {
-        total: '0',
-        next: null,
-        operation: null,
-      },
-    });
-  }
-
-  buttonClicks(value) {
-    const { obj } = this.state;
-    this.setState({
-      obj: calculate(obj, value),
-    });
-  }
-
-  render() {
-    const { obj } = this.state;
-    return (
-      <main>
-        <Display obj={obj} />
-        <div>
-          <div className="rows">
-            <Rows row={['AC', '+/-', '%', '÷']} buttonClicks={this.buttonClicks} />
+  return (
+    <>
+      <div className="calc">
+        <h1>Lets do some math!</h1>
+        <main>
+          <Display obj={obj} />
+          <div>
+            <div className="rows">
+              <Rows row={['AC', '+/-', '%', '÷']} setObj={setObj} />
+            </div>
+            <div className="rows">
+              <Rows row={['7', '8', '9', 'x']} setObj={setObj} />
+            </div>
+            <div className="rows">
+              <Rows row={['4', '5', '6', '-']} setObj={setObj} />
+            </div>
+            <div className="rows">
+              <Rows row={['1', '2', '3', '+']} setObj={setObj} />
+            </div>
+            <div className="rows">
+              <Rows row={['0', '.', '=']} setObj={setObj} />
+            </div>
           </div>
-          <div className="rows">
-            <Rows row={['7', '8', '9', 'x']} buttonClicks={this.buttonClicks} />
-          </div>
-          <div className="rows">
-            <Rows row={['4', '5', '6', '-']} buttonClicks={this.buttonClicks} />
-          </div>
-          <div className="rows">
-            <Rows row={['1', '2', '3', '+']} buttonClicks={this.buttonClicks} />
-          </div>
-          <div className="rows">
-            <Rows row={['0', '.', '=']} buttonClicks={this.buttonClicks} />
-          </div>
-        </div>
-      </main>
-    );
-  }
-}
+        </main>
+      </div>
+    </>
+  );
+};
 
 export default Calc;
