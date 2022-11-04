@@ -11,7 +11,7 @@ A simple calculator project built using ReactJS. In this section I configured th
 - React 
 
 ## Live Demo (if available)
-Live link not avaible yet
+[Math-Magician](https://geloexmath.netlify.app/)
 
 ## Getting Started
 
